@@ -1,5 +1,8 @@
 {
-    "title": "Library Template",
-    "author": "",
-    "code_languages": {}
+    "title": "Yvensíveis Lib",
+    "author": "Lucca M. Nunes, Pedro César Mesquita F., Yvens Ian P. Porto",
+    "code_languages": {
+        ".cpp": "C++",
+        ".py": "Python"
+    }
 }
