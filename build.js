@@ -22,25 +22,37 @@ readme_text += `# ${title}\n\n`
 const docs = path.join('.', 'docs', 'README.md')
 readme_text += fs.readFileSync(docs, 'utf8') + '\n'
 
+const format_title = (title) => {
+    const arr = title.split('-')
+    if (parseInt(arr[0]) == arr[0]) arr.shift()
+    const formatted_title = arr.join(' ')
+    return formatted_title
+}
+
+const format_path = (path_to_format) => {
+    const formatted_path = path_to_format.replace(' ', '%20')
+    return formatted_path
+}
+
 const format_section_tex = (title, depth) => {
     if (depth <= 2) {
         let text = '\\'
         for (let i = 0; i < depth; ++i) text += 'sub'
-        text += `section{${title}}\n\n`
+        text += `section{${format_title(title)}}\n\n`
         return text
     } else {
-        return `\\textbf{${title}}\n\n`
+        return `\\textbf{${format_title(title)}}\n\n`
     }
 }
 
-const format_section_readme = (title, path, depth) => {
+const format_section_readme = (title, section_path, depth) => {
     let text = ''
     if (depth == 0) text += '\n#'
     else {
         for (let i = 1; i < depth; ++i) text += '    '
         text += '*'
     }
-    text += ` [${title}](${path})\n`
+    text += ` [${format_title(title)}](${format_path(section_path)})\n`
     if (depth == 0) text += '\n'
     return text
 }
