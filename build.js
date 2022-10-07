@@ -25,12 +25,12 @@ readme_text += fs.readFileSync(docs, 'utf8') + '\n'
 const format_title = (title) => {
     const arr = title.split('-')
     if (parseInt(arr[0]) == arr[0]) arr.shift()
-    const formatted_title = arr.join(' ')
+    const formatted_title = arr.join('-')
     return formatted_title
 }
 
 const format_path = (path_to_format) => {
-    const formatted_path = path_to_format.replace(' ', '%20')
+    const formatted_path = path_to_format.replaceAll(' ', '%20')
     return formatted_path
 }
 
@@ -47,7 +47,7 @@ const format_section_tex = (title, depth) => {
 
 const format_section_readme = (title, section_path, depth) => {
     let text = ''
-    if (depth == 0) text += '\n#'
+    if (depth == 0) text += '\n##'
     else {
         for (let i = 1; i < depth; ++i) text += '    '
         text += '*'
