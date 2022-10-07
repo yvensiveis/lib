@@ -47,7 +47,7 @@ const format_section_tex = (title, depth) => {
 
 const format_section_readme = (title, section_path, depth) => {
     let text = ''
-    if (depth == 0) text += '\n#'
+    if (depth == 0) text += '\n##'
     else {
         for (let i = 1; i < depth; ++i) text += '    '
         text += '*'
