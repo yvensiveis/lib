@@ -25,12 +25,12 @@ readme_text += fs.readFileSync(docs, 'utf8') + '\n'
 const format_title = (title) => {
     const arr = title.split('-')
     if (parseInt(arr[0]) == arr[0]) arr.shift()
-    const formatted_title = arr.join(' ')
+    const formatted_title = arr.join('-')
     return formatted_title
 }
 
 const format_path = (path_to_format) => {
-    const formatted_path = path_to_format.replace(' ', '%20')
+    const formatted_path = path_to_format.replaceAll(' ', '%20')
     return formatted_path
 }
 
