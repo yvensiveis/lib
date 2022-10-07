@@ -17,6 +17,10 @@
         }
     }
     ```
+    `title` and `author` will be used to generate the LaTeX document. `title`
+    will also be used to generate the `README.md`. In `code_languages`, each
+    extension must be associated to a
+    [language supported by LaTeX code listing](https://www.overleaf.com/learn/latex/Code_listing#Supported_languages).
 
 2. Change lib description at [docs/README.md](./docs/README.md):
 
